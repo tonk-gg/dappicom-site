@@ -1,42 +1,70 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-height: 100vh;
+}
+
+.scroll-container {
+  top: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  width: 100%;
+  /* max-width: 1920px; */
+  background: linear-gradient(180deg, #FF83BD 0%, #FED700 100%);
+}
+
+.segment {
+  width: 100%;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.full-bleed {
+  min-height: 100vh;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.tv-bg {
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.title {
+  font-family: "Alro";
+  font-size: 300px;
+}
+
+/* wide desktop */
+@media (max-width: 1920px) {
+  .title {
+    font-size: 180px;
   }
 }
-
-.card {
-  padding: 2em;
+/* desktop */
+@media (max-width: 1200px) {
+  .title {
+    font-size: 80px;
+  }
 }
-
-.read-the-docs {
-  color: #888;
+/* tablet */
+@media (max-width: 800px) {
+  .title {
+    font-size: 80px;
+  }
+}
+/* mobile large */
+@media (max-width: 420px) {
+  .title {
+    font-size: 60px;
+  }
+}
+/* mobile small */
+@media (max-width: 280px) {
+  .title {
+    font-size: 300px;
+  }
 }
