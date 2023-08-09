@@ -35,13 +35,13 @@ const TextContainer = styled.div`
       return `#FF83BD;`
     }
     else if ($background === "PLAY") {
-      return `linear-gradient(180deg, #017EC6 0%, #7C84CE 46.35%, #8D84CE 79.69%, #CE9DD6 100%);`
+      return `linear-gradient(180deg, #017EC6 0%, #8D84CE 61.98%, #CE9DD6 100%);`
     }
     else if ($background === "PROVE") {
-      return `linear-gradient(180deg, #8992CE 0%, #336BB7 57.81%, #326BB6 93.96%);`
+      return `linear-gradient(180deg, #8A93CE 0%, #748ECF 7.03%, #3567B7 23.44%, #5A73BD 59.89%, #BF9CD5 98.96%);`
     }
     else if ($background === "PERSIST") {
-      return `background: linear-gradient(180deg, #FFDD3C 0%, #395FAC 100%);`
+      return `linear-gradient(180deg, #FFDD3C 0%, #395FAC 100%);`
     } else {
       return `white;`
     }
@@ -70,7 +70,7 @@ const ImageContainer = styled.div`
       return `linear-gradient(180deg, #CE9DD6 0%, #FFA5DE 25.52%, #FDBAD7 30.45%, #FECED1 38.02%, #FEEF5C 49.88%, #8992CE 100%);`
     }
     else if ($background === "PERSIST") {
-      return `linear-gradient(180deg, #316BB5 0%, #7B7BC1 11.44%, #C2A7D7 21.61%, #E4D5D6 29.69%, #FFF658 43.23%, #FFDC3A 100%);`
+      return `linear-gradient(180deg, #BF9CD5 0%, #DAD1B8 28.58%, #FEF554 43.86%, #FFDC3A 100%);`
     } else {
       return `linear-gradient(180deg, #3860AD 0%, #3B005F 100%);`
     }
