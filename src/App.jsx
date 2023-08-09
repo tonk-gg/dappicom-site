@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components'
 import throttle from "lodash.throttle";
 
+import LazyLoadImage from './LazyLoadImage';
 
 const Container = styled.div`
   display: flex;
@@ -19,7 +20,6 @@ const ScrollContainer = styled.div`
   flex-direction: column;
   overflow-y: scroll;
   width: 100%;
-  max-width: 1920px;
 `
 
 const Section = styled.div`
@@ -29,7 +29,7 @@ const Section = styled.div`
 
 const TextContainer = styled.div`
   width: 100%;
-  height: 800px;
+  height: 62vw;
   background: ${({$background}) => {
     if ($background === "DAPPICOM") {
       return `#FF83BD;`
@@ -56,8 +56,8 @@ const Segment = styled.div`
 `
 
 const ImageContainer = styled.div`
-  width: 1920px;
-  height: 1200px;
+  width: 100%;
+  height: 62vw;
   position: relative;
   background: ${({$background}) => {
     if ($background === "DAPPICOM") {
@@ -86,21 +86,21 @@ const ImageContainer = styled.div`
 //   font-size: 300px;
 // `
 
-const BottomImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`
+// const BottomImage = styled.img`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: auto;
+// `
 
-const TopImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-`
+// const LazyLoadImage = styled.img`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: auto;
+// `
 
 /**
  * Check if an element is in viewport
@@ -147,8 +147,8 @@ function App() {
         <Section>
           <ListeningSegment>
             <ImageContainer $background={"DAPPICOM"}>
-                <BottomImage src="/images/1_DappicomBox_illo.gif"/>
-                <TopImage src="/images/1_DappicomBox_anim.gif"/>
+                <LazyLoadImage initialSrc="/images/1_DappicomBox_illo.gif" srcList={["/images/HD/1_DappicomBox_illo.gif"]}/>
+                <LazyLoadImage initialSrc="/images/1_DappicomBox_anim.gif" srcList={["/images/HD/1_DappicomBox_anim.gif"]}/>
             </ImageContainer>
           </ListeningSegment>
           <TextContainer $background={"DAPPICOM"}>
@@ -158,8 +158,8 @@ function App() {
       <Section>
         <ListeningSegment>
             <ImageContainer $background={"PLAY"}>
-                <BottomImage src="/images/2_PlayNESROMS_illo.gif"/>
-                <TopImage src="/images/2_PlayNESROMS_anim.gif"/>
+                <LazyLoadImage initialSrc="/images/2_PlayNESROMS_illo.gif" srcList={["/images/HD/2_PlayNESROMS_illo.gif"]}/>
+                <LazyLoadImage initialSrc="/images/2_PlayNESROMS_anim.gif" srcList={["/images/HD/2_PlayNESROMS_anim.gif"]}/>
             </ImageContainer>
           </ListeningSegment>
           <TextContainer $background={"PLAY"}>
@@ -170,7 +170,7 @@ function App() {
       <Section>
         <ListeningSegment>
             <ImageContainer $background={"PROVE"}>
-                <BottomImage src="/images/3_ProveGameplay_illo.gif"/>
+                <LazyLoadImage initialSrc="/images/3_ProveGameplay_illo.gif" srcList={["/images/HD/3_ProveGameplay_illo.gif"]}/>
             </ImageContainer>
           </ListeningSegment>
           <TextContainer $background={"PROVE"}>
@@ -180,8 +180,8 @@ function App() {
         <Section>
           <ListeningSegment>
             <ImageContainer $background={"PERSIST"}>
-                <BottomImage src="/images/4_PersistStateOnchain_illo.gif"/>
-                <TopImage src="/images/4_PersistStateOnchain_anim.gif"/>
+                <LazyLoadImage initialSrc="/images/4_PersistStateOnchain_illo.gif" srcList={["/images/HD/4_PersistStateOnchain_illo.gif"]}/>
+                <LazyLoadImage initialSrc="/images/4_PersistStateOnchain_anim.gif" srcList={["/images/HD/4_PersistStateOnchain_anim.gif"]}/>
             </ImageContainer>
           </ListeningSegment>
           <TextContainer $background={"PERSIST"}>
