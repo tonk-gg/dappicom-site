@@ -1,12 +1,21 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 
+import { MOBILE_WIDTH_SIZE, TALL_THIN_SIZE } from '../constants';
+
 const LLImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: auto;
+  padding: 0;
+  @media (max-width: ${TALL_THIN_SIZE}) {
+    padding-top: 10vh;
+  }
+  @media (max-width: ${MOBILE_WIDTH_SIZE}) {
+    padding-top: 20vh;
+  }
 `
 
 function preloadImage (src) {

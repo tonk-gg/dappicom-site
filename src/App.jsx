@@ -1,8 +1,10 @@
-import { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components'
-import throttle from "lodash.throttle";
 
-import LazyLoadImage from './LazyLoadImage';
+import LazyLoadImage from './components/LazyLoadImage';
+import TextBox from './components/TextBox';
+
+import { MOBILE_WIDTH_SIZE, TALL_THIN_SIZE } from './constants'
+
 
 const Container = styled.div`
   display: flex;
@@ -29,7 +31,12 @@ const Section = styled.div`
 
 const TextContainer = styled.div`
   width: 100%;
-  height: 62vw;
+  height: auto;
+  padding: 0 0;
+  margin: -1px 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 0 20vh 0;
   background: ${({$background}) => {
     if ($background === "DAPPICOM") {
       return `#FF83BD;`
@@ -46,13 +53,11 @@ const TextContainer = styled.div`
       return `white;`
     }
   }};
-`
+  overflow: visible;
 
-const Segment = styled.div`
-  width: 100%;
-  text-align: center;
-  margin: 0;
-  padding: 0;
+  @media (max-width: ${TALL_THIN_SIZE}) {
+    padding: 20vh 0 100px 0;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -75,69 +80,16 @@ const ImageContainer = styled.div`
       return `linear-gradient(180deg, #3860AD 0%, #3B005F 100%);`
     }
   }};
+
+  @media (max-width: ${MOBILE_WIDTH_SIZE}) {
+    height: 82vw;
+  }
 `
 
-// const TitleSegment = styled(Segment)`
-//   height: 100vh;
-// `
+const SectionExpander = styled.div`
+  height: 100vh;
+`
 
-// const Title = styled.h1`
-//   font-family: "Alro";
-//   font-size: 300px;
-// `
-
-// const BottomImage = styled.img`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: auto;
-// `
-
-// const LazyLoadImage = styled.img`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: auto;
-// `
-
-/**
- * Check if an element is in viewport
-
- * @param {number} offset - Number of pixels up to the observable element from the top
- * @param {number} throttleMilliseconds - Throttle observable listener, in ms
- */
-function useVisibility (
-  offset = 0,
-  throttleMilliseconds = 100
-) {
-  const [isVisible, setIsVisible] = useState(false);
-  const currentElement = useRef(null);
-
-  const onScroll = throttle(() => {
-    if (!currentElement.current) {
-      setIsVisible(false);
-      return;
-    }
-    const top = currentElement.current.getBoundingClientRect().top;
-    setIsVisible(top + offset >= 0 && top - offset <= window.innerHeight);
-  }, throttleMilliseconds);
-
-  useEffect(() => {
-    document.addEventListener('scroll', onScroll, true);
-    return () => document.removeEventListener('scroll', onScroll, true);
-  });
-
-  return [ isVisible, currentElement ];
-}
-
-
-const ListeningSegment = (props) => {
-  const [ isVisible, currentElement ] = useVisibility(100, 100);
-
-  return <Segment ref={currentElement} $isVisible={isVisible} >{props.children}</Segment>;
-}
 
 function App() {
   return (
@@ -145,48 +97,61 @@ function App() {
     <Container>
       <ScrollContainer>
         <Section>
-          <ListeningSegment>
-            <ImageContainer $background={"DAPPICOM"}>
-                <LazyLoadImage initialSrc="/images/1_DappicomBox_illo.gif" srcList={["/images/HD/1_DappicomBox_illo.gif"]}/>
-                <LazyLoadImage initialSrc="/images/1_DappicomBox_anim.gif" srcList={["/images/HD/1_DappicomBox_anim.gif"]}/>
-            </ImageContainer>
-          </ListeningSegment>
+          <ImageContainer $background={"DAPPICOM"}>
+              <LazyLoadImage initialSrc="/images/1_DappicomBox_illo.gif" srcList={["/images/HD/1_DappicomBox_illo.gif"]}/>
+              <LazyLoadImage initialSrc="/images/1_DappicomBox_anim.gif" srcList={["/images/HD/1_DappicomBox_anim.gif"]}/>
+          </ImageContainer>
           <TextContainer $background={"DAPPICOM"}>
-
+            <TextBox>
+            Dappicom is a new open-source project brought to you by TONK and friends. 
+<br/><br/>
+Keep Scrolling to see a playful overview of how it works and our vision for what dappicom might become one day.
+            </TextBox>
           </TextContainer>
         </Section>
       <Section>
-        <ListeningSegment>
-            <ImageContainer $background={"PLAY"}>
-                <LazyLoadImage initialSrc="/images/2_PlayNESROMS_illo.gif" srcList={["/images/HD/2_PlayNESROMS_illo.gif"]}/>
-                <LazyLoadImage initialSrc="/images/2_PlayNESROMS_anim.gif" srcList={["/images/HD/2_PlayNESROMS_anim.gif"]}/>
-            </ImageContainer>
-          </ListeningSegment>
+          <ImageContainer $background={"PLAY"}>
+              <LazyLoadImage initialSrc="/images/2_PlayNESROMS_illo.gif" srcList={["/images/HD/2_PlayNESROMS_illo.gif"]}/>
+              <LazyLoadImage initialSrc="/images/2_PlayNESROMS_anim.gif" srcList={["/images/HD/2_PlayNESROMS_anim.gif"]}/>
+          </ImageContainer>
           <TextContainer $background={"PLAY"}>
-
+            <TextBox>
+            a retro game should feel like old times. first and foremost, dappicom just let’s you play and enjoy!
+            <br/><br/>
+what’s new? as you play, bits of the nes machine state are streamed to a proving server. 
+            </TextBox>
           </TextContainer>
-
       </Section>
       <Section>
-        <ListeningSegment>
-            <ImageContainer $background={"PROVE"}>
-                <LazyLoadImage initialSrc="/images/3_ProveGameplay_illo.gif" srcList={["/images/HD/3_ProveGameplay_illo.gif"]}/>
-            </ImageContainer>
-          </ListeningSegment>
+          <ImageContainer $background={"PROVE"}>
+              <LazyLoadImage initialSrc="/images/3_ProveGameplay_illo.gif" srcList={["/images/HD/3_ProveGameplay_illo.gif"]}/>
+          </ImageContainer>
           <TextContainer $background={"PROVE"}>
-
+            <TextBox>
+            the proving server works day and night in A land far far away. 
+            <br/><br/>
+It takes the bits of machine state and uses aztec’s noir language to convert it all into mathematical proofs.
+            <br/><br/>
+you can’t argue with maths.
+            </TextBox>
           </TextContainer>
         </Section>
         <Section>
-          <ListeningSegment>
-            <ImageContainer $background={"PERSIST"}>
-                <LazyLoadImage initialSrc="/images/4_PersistStateOnchain_illo.gif" srcList={["/images/HD/4_PersistStateOnchain_illo.gif"]}/>
-                <LazyLoadImage initialSrc="/images/4_PersistStateOnchain_anim.gif" srcList={["/images/HD/4_PersistStateOnchain_anim.gif"]}/>
-            </ImageContainer>
-          </ListeningSegment>
+          <ImageContainer $background={"PERSIST"}>
+              <LazyLoadImage initialSrc="/images/4_PersistStateOnchain_illo.gif" srcList={["/images/HD/4_PersistStateOnchain_illo.gif"]}/>
+              <LazyLoadImage initialSrc="/images/4_PersistStateOnchain_anim.gif" srcList={["/images/HD/4_PersistStateOnchain_anim.gif"]}/>
+          </ImageContainer>
           <TextContainer $background={"PERSIST"}>
+            <TextBox>
+            those mathematical proofs? They’re beamed into the blockchain and verified by noir’s generated smart contract code. 
+            <br/><br/>
 
+you get rewards, badges, or new levels, when the proofs of your achievement are correct.
+            </TextBox>
           </TextContainer>
+        </Section>
+        <Section>
+          <SectionExpander/>
         </Section>
       </ScrollContainer>
     </Container>
