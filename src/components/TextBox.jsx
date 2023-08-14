@@ -77,6 +77,7 @@ const TextContainerBox = styled.div`
         font-size: 24px;
         padding: 20px 0 5px 30px;
         width: calc(100% - 50px);
+        margin-top: -100px;
     }
     @media (max-width: ${ULTRA_SLIM}) {
         font-size: 18px;

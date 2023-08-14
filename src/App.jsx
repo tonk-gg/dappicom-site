@@ -97,7 +97,9 @@ function App() {
     <Container>
       <ScrollContainer>
         <Section>
-          <ImageContainer $background={"DAPPICOM"}>
+          <ImageContainer $background={"DAPPICOM"} style={{
+            paddingTop: '10vh',
+          }}>
               <LazyLoadImage initialSrc="/images/1_DappicomBox_illo.gif" srcList={["/images/HD/1_DappicomBox_illo.gif"]}/>
               <LazyLoadImage initialSrc="/images/1_DappicomBox_anim.gif" srcList={["/images/HD/1_DappicomBox_anim.gif"]}/>
           </ImageContainer>
