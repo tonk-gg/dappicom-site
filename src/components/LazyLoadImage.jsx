@@ -1,7 +1,19 @@
 import { useEffect, useState } from 'react';
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import { MOBILE_WIDTH_SIZE, TALL_THIN_SIZE } from '../constants';
+
+const float = keyframes`
+  0% {
+    transform: translateY(0vh);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`
 
 const LLImage = styled.img`
   position: absolute;
@@ -16,6 +28,10 @@ const LLImage = styled.img`
   @media (max-width: ${MOBILE_WIDTH_SIZE}) {
     padding-top: 20vh;
   }
+`
+
+const FloatingImage = styled(LLImage)`
+  animation: 5s infinite ${float} ease-in-out;
 `
 
 function preloadImage (src) {
@@ -56,10 +72,12 @@ function useImagePreloader(imageList) {
 const LazyLoadImage = (props) => {
     const { imagesPreloaded } = useImagePreloader(props.srcList);
 
+    const RenderComponent = props.float ? FloatingImage : LLImage;
+
     if (!imagesPreloaded) {
-        return <LLImage src={props.initialSrc} />
+        return <RenderComponent src={props.initialSrc} />
     } else {
-        return <LLImage src={props.srcList[0]} />
+        return <RenderComponent src={props.srcList[0]} />
     }
 }
 

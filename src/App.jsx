@@ -1,9 +1,10 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import LazyLoadImage from './components/LazyLoadImage';
 import TextBox from './components/TextBox';
+import DappicomText from './components/DappicomText';
 
-import { MOBILE_WIDTH_SIZE, TALL_THIN_SIZE } from './constants'
+import { MOBILE_WIDTH_SIZE, TALL_THIN_SIZE, LAPTOP_SCREEN_HEIGHT, ULTRA_SLIM, RAZOR_THIN } from './constants'
 
 
 const Container = styled.div`
@@ -86,8 +87,108 @@ const ImageContainer = styled.div`
   }
 `
 
-const SectionExpander = styled.div`
-  height: 100vh;
+const FinalLanding = styled.div`
+  padding-top: 20vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(180deg, #3860AD 0%, #3B005F 100%);
+`
+
+const SubHeading = styled.p`
+  font-family: 'VisbyCF';
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  padding-top: 180px;
+  font-size: 70px;
+  @media(max-width: ${LAPTOP_SCREEN_HEIGHT}) {
+    font-size: 60px;
+  }
+  @media(max-width: ${TALL_THIN_SIZE}) {
+    font-size: 40px;
+    padding-top: 130px;
+  }
+  @media(max-width: ${MOBILE_WIDTH_SIZE}) {
+    font-size: 25px;
+    padding-top: 90px;
+  }
+  @media(max-width: ${ULTRA_SLIM}) {
+    padding-top: 60px;
+    font-size: 20px;
+  }
+`
+
+const ParagraphText = styled.p`
+  font-family: 'Inter';
+  font-size: 43px;
+  color: white;
+  width: 1400px;
+  text-align: center;
+  margin-top: 180px;
+  @media(max-width: ${LAPTOP_SCREEN_HEIGHT}) {
+    width: 1200px;
+  }
+  @media(max-width: ${TALL_THIN_SIZE}) {
+    width: 800px;
+    font-size: 28px;
+    margin-top: 120px;
+  }
+  @media(max-width: ${MOBILE_WIDTH_SIZE}) {
+    width: 500px;
+    margin-top: 70px;
+    font-size: 26px;
+  }
+  @media(max-width: ${ULTRA_SLIM}) {
+    width: 400px;
+    font-size: 21px;
+    margin-top: 50px;
+  }
+  @media(max-width: ${RAZOR_THIN}) {
+    width: 300px;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+`
+
+const ReadLink = styled.a`
+  font-family: 'VisbyCF';
+  font-weight: 700;
+  color: white;
+  text-decoration: underline;
+  font-size: 43px;
+  padding: 100px;
+  margin: 300px;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  text-align: center;
+  @media(max-width: ${LAPTOP_SCREEN_HEIGHT}) {
+  }
+  @media(max-width: ${TALL_THIN_SIZE}) {
+    font-size: 28px;
+    margin: 120px;
+  }
+  @media(max-width: ${MOBILE_WIDTH_SIZE}) {
+    font-size: 26px;
+  }
+  @media(max-width: ${ULTRA_SLIM}) {
+    font-size: 21px;
+    margin-top: 0;
+  }
+
+`
+
+const SeriousText = styled.p`
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-size: 18px;
+  font-family: 'Inter';
 `
 
 
@@ -100,14 +201,14 @@ function App() {
           <ImageContainer $background={"DAPPICOM"} style={{
             paddingTop: '10vh',
           }}>
-              <LazyLoadImage initialSrc="/images/1_DappicomBox_illo.gif" srcList={["/images/HD/1_DappicomBox_illo.gif"]}/>
-              <LazyLoadImage initialSrc="/images/1_DappicomBox_anim.gif" srcList={["/images/HD/1_DappicomBox_anim.gif"]}/>
+              <LazyLoadImage float={true} initialSrc="/images/1_DappicomBox_illo.gif" srcList={["/images/HD/1_DappicomBox_illo.gif"]}/>
+              <LazyLoadImage float={true} initialSrc="/images/1_DappicomBox_anim.gif" srcList={["/images/HD/1_DappicomBox_anim.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"DAPPICOM"}>
             <TextBox>
             Dappicom is a new open-source project brought to you by TONK and friends. 
-<br/><br/>
-Keep Scrolling to see a playful overview of how it works and our vision for what dappicom might become one day.
+            <br/><br/> 
+            Here's how it works.
             </TextBox>
           </TextContainer>
         </Section>
@@ -118,9 +219,9 @@ Keep Scrolling to see a playful overview of how it works and our vision for what
           </ImageContainer>
           <TextContainer $background={"PLAY"}>
             <TextBox>
-            a retro game should feel like old times. first and foremost, dappicom just let’s you play and enjoy!
+            Retro games should feel like old times. Dappicom let’s you play your games and enjoy!
             <br/><br/>
-what’s new? as you play, bits of the nes machine state are streamed to a proving server. 
+what’s new? as you play, bits of the nes machine state are streamed to a server. 
             </TextBox>
           </TextContainer>
       </Section>
@@ -130,9 +231,9 @@ what’s new? as you play, bits of the nes machine state are streamed to a provi
           </ImageContainer>
           <TextContainer $background={"PROVE"}>
             <TextBox>
-            the proving server works day and night in A land far far away. 
+            the server works for you day and night in a land far far away. 
             <br/><br/>
-It takes the bits of machine state and uses aztec’s noir language to convert it all into mathematical proofs.
+It takes the bits of machine state and uses the noir language to convert play into mathematical proofs.
             <br/><br/>
 you can’t argue with maths.
             </TextBox>
@@ -145,15 +246,31 @@ you can’t argue with maths.
           </ImageContainer>
           <TextContainer $background={"PERSIST"}>
             <TextBox>
-            those mathematical proofs? They’re beamed into the blockchain and verified by noir’s generated smart contract code. 
+            Those proofs are sent to a blockchain and verified by noir’s generated smart contract code. 
             <br/><br/>
 
-you get rewards, badges, or new levels, when the proofs of your achievement are correct.
+you get rewards, badges, or new levels, when the proofs of your achievement are checked.
             </TextBox>
           </TextContainer>
         </Section>
         <Section>
-          <SectionExpander/>
+          <FinalLanding>
+            <DappicomText />
+            <SubHeading>
+              Provable NES Emulator built in Noir
+            </SubHeading>
+            <ParagraphText>
+              Dappicom is under active development and seeking contributions. Please take a look at the github repository for more detailed technical information and instructions on how to contribute.
+            </ParagraphText>
+            <ReadLink>
+              READ DAPPICOM ARTICLE
+            </ReadLink>
+            <SeriousText>
+            Illustrations and Animations by Hi-Bred. This project is funded by an Aztec ecosystem grant.
+            <br/>
+            Copyright @ 2023 Aperture Labs. All Rights Reserved.
+            </SeriousText>
+          </FinalLanding>
         </Section>
       </ScrollContainer>
     </Container>
