@@ -24,7 +24,7 @@ const GithubImage = styled.img`
 
 const BrilliantGithubCorner = () => {
     return (
-        <GithubLink>
+        <GithubLink href={"https://github.com/tonk-gg/dappicom"} target={"_blank"}>
             <GithubImage src={"images/github-corner.svg"} />
         </GithubLink>
     )

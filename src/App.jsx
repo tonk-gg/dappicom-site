@@ -277,9 +277,10 @@ function App() {
             <ParagraphText>
               Dappicom is under active development and seeking contributions. Please take a look at the github repository for more detailed technical information and instructions on how to contribute.
             </ParagraphText>
-            <ReadLink>
+            {/* <ReadLink>
+            HIDE FOR NOW
               READ DAPPICOM ARTICLE
-            </ReadLink>
+            </ReadLink> */}
             <BigOlSpacer />
             <SeriousText>
             Illustrations and Animations by <a href={"https://hi-bred.net/"} target={"_blank"}>Hi-Bred</a>. This project is funded by an <a src={"https://aztec.network/index.html"} target={"_blank"}>Aztec</a> ecosystem grant.
