@@ -20,10 +20,6 @@ const Container = styled.div`
         height: 100px;
     }
     @media(max-width: ${ULTRA_SLIM}) {
-        width: 400px;
-        height: 80px;
-    }
-    @media(max-width: ${RAZOR_THIN}) {
         width: 300px;
         height: 60px;
     }
@@ -48,9 +44,6 @@ const DappicomTextTop = styled.p`
         font-size: 100px;
     }
     @media(max-width: ${ULTRA_SLIM}) {
-        font-size: 80px; 
-    }
-    @media(max-width: ${RAZOR_THIN}) {
         font-size: 60px;
     }
     font-size: ${({$size}) => $size}px;
@@ -80,11 +73,6 @@ const DappicomTextBottom = styled.p`
         left: 5px;
     }
     @media(max-width: ${ULTRA_SLIM}) {
-        font-size: 80px; 
-        top: 4px;
-        left: 4px;
-    }
-    @media(max-width: ${RAZOR_THIN}) {
         font-size: 60px;
         top: 3px;
         left: 3px;

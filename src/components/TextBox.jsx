@@ -20,8 +20,13 @@ const MetaBox = styled.div`
 const InnerBoxNotBig = styled.div`
     position: relative;
     width: 100%;
+    left: 0;
     height: auto;
     max-width: 1920px;
+    @media (max-width: ${TALL_THIN_SIZE}) {
+        left: 10px;
+        width: calc(100% - 10px);
+    }
 `
 
 const BorderBox = styled.div`
@@ -49,15 +54,9 @@ const BorderBox = styled.div`
     max-width: 1920px;
     border-style: solid;
     background: ${({$upsideDown}) => !$upsideDown ? `rgba(0,0,0,0.33)` : ``};
-    // @media (max-width: ${TALL_THIN_SIZE}) {
-
-    // }
-    // @media (max-width: ${MOBILE_WIDTH_SIZE}) {
-    //     font-size: 24px;
-    //     padding: 0;
-    // }
-    // @media (max-width: ${ULTRA_SLIM}) {
-    // }
+    @media (max-width: ${MOBILE_WIDTH_SIZE}) {
+        height: calc(100% + 20px);
+    }
 `
 
 const TextContainerBox = styled.div`
@@ -83,7 +82,6 @@ const TextContainerBox = styled.div`
         font-size: 18px;
         padding: 10px 0 2px 20px;
     }
-    // background: rgba(255,0,0,0.2);
 `
 
 const TextBox = ({ children }) => {

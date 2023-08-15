@@ -57,7 +57,7 @@ const TextContainer = styled.div`
   overflow: visible;
 
   @media (max-width: ${TALL_THIN_SIZE}) {
-    padding: 20vh 0 100px 0;
+    padding: 20vh 0 200px 0;
   }
 `
 
@@ -142,11 +142,6 @@ const ParagraphText = styled.p`
     font-size: 26px;
   }
   @media(max-width: ${ULTRA_SLIM}) {
-    width: 400px;
-    font-size: 21px;
-    margin-top: 50px;
-  }
-  @media(max-width: ${RAZOR_THIN}) {
     width: 300px;
     font-size: 18px;
     margin-top: 40px;
@@ -181,13 +176,17 @@ const ReadLink = styled.a`
 
 `
 
+const BigOlSpacer = styled.div`
+  height: 50vh;
+  width: 100vw.
+`
 const SeriousText = styled.p`
   text-align: center;
   width: 100%;
   position: absolute;
   bottom: 0;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Inter';
 `
 
@@ -265,6 +264,7 @@ you get rewards, badges, or new levels, when the proofs of your achievement are 
             <ReadLink>
               READ DAPPICOM ARTICLE
             </ReadLink>
+            <BigOlSpacer />
             <SeriousText>
             Illustrations and Animations by Hi-Bred. This project is funded by an Aztec ecosystem grant.
             <br/>
