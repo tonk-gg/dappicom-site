@@ -207,8 +207,8 @@ function App() {
           <ImageContainer $background={"DAPPICOM"} style={{
             paddingTop: '10vh',
           }}>
-              <LazyLoadImage float={true} pad initialSrc="/images/1_DappicomBox_illo.gif" srcList={["/images/HD/1_DappicomBox_illo.gif"]}/>
-              <LazyLoadImage float={true} pad initialSrc="/images/1_DappicomBox_anim.gif" srcList={["/images/HD/1_DappicomBox_anim.gif"]}/>
+              <LazyLoadImage float={true} pad initialSrc="images/1_DappicomBox_illo.gif" srcList={["images/HD/1_DappicomBox_illo.gif"]}/>
+              <LazyLoadImage float={true} pad initialSrc="images/1_DappicomBox_anim.gif" srcList={["images/HD/1_DappicomBox_anim.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"DAPPICOM"}>
             <TextBox>
@@ -220,42 +220,41 @@ function App() {
         </Section>
       <Section>
           <ImageContainer $background={"PLAY"}>
-              <LazyLoadImage initialSrc="/images/2_PlayNESROMS_illo.gif" srcList={["/images/HD/2_PlayNESROMS_illo.gif"]}/>
-              <LazyLoadImage initialSrc="/images/2_PlayNESROMS_anim.gif" srcList={["/images/HD/2_PlayNESROMS_anim.gif"]}/>
+              <LazyLoadImage initialSrc="images/2_PlayNESROMS_illo.gif" srcList={["images/HD/2_PlayNESROMS_illo.gif"]}/>
+              <LazyLoadImage initialSrc="images/2_PlayNESROMS_anim.gif" srcList={["images/HD/2_PlayNESROMS_anim.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"PLAY"}>
             <TextBox>
-            Retro games should feel like old times. Dappicom let’s you play your games and enjoy!
+              RETRO GAMES SHOULD FEEL LIKE OLD TIMES. DAPPICOM LET'S YOU PLAY YOUR GAMES AND ENJOY!
             <br/><br/>
-what’s new? as you play, bits of the nes machine state are streamed to a server. 
+            WHAT'S NEW? AS YOU PLAY, BITS OF THE NES MACHINE STATE ARE STREAMED TO A SERVER.
             </TextBox>
           </TextContainer>
       </Section>
       <Section>
           <ImageContainer $background={"PROVE"}>
-              <LazyLoadImage initialSrc="/images/3_ProveGameplay_illo.gif" srcList={["/images/HD/3_ProveGameplay_illo.gif"]}/>
+              <LazyLoadImage initialSrc="images/3_ProveGameplay_illo.gif" srcList={["images/HD/3_ProveGameplay_illo.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"PROVE"}>
             <TextBox>
-            the server works for you day and night in a land far far away. 
+              THE SERVER WORKS FOR YOU DAY AND NIGHT IN A LAND FAR, FAR AWAY
             <br/><br/>
-It takes the bits of machine state and uses the <a href={"https://noir-lang.org/"} target={"_blank"}>noir language</a> to convert play into mathematical proofs.
+            IT TAKES THE BITS OF MACHINE STATE AND USES THE <a href={"https://noir-lang.org/"} target={"_blank"}>NOIR LANGUAGE</a> TO CONVERT PLAY INTO MATHEMATICAL PROOFS. 
             <br/><br/>
-you can’t argue with maths.
+            YOU CAN'T ARGUE WITH MATHS.
             </TextBox>
           </TextContainer>
         </Section>
         <Section>
           <ImageContainer $background={"PERSIST"}>
-              <LazyLoadImage initialSrc="/images/4_PersistStateOnchain_illo.gif" srcList={["/images/HD/4_PersistStateOnchain_illo.gif"]}/>
-              <LazyLoadImage initialSrc="/images/4_PersistStateOnchain_anim.gif" srcList={["/images/HD/4_PersistStateOnchain_anim.gif"]}/>
+              <LazyLoadImage initialSrc="images/4_PersistStateOnchain_illo.gif" srcList={["images/HD/4_PersistStateOnchain_illo.gif"]}/>
+              <LazyLoadImage initialSrc="images/4_PersistStateOnchain_anim.gif" srcList={["images/HD/4_PersistStateOnchain_anim.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"PERSIST"}>
             <TextBox>
-            Those proofs are sent to a blockchain and verified by noir’s generated smart contract code. 
+              THOSE PROOFS ARE SENT TO A BLOCKCHAIN AND VERIFIED BY NOIR'S GENERATED SMART CONTRACT CODE.
             <br/><br/>
-
-you get rewards, badges, or new levels, when the proofs of your achievement are checked.
+            YOU GET REWARDS, BADGES OR NEW LEVELS WHEN THE PROOFS OF YOUR ACHIEVEMENT ARE CHECKED.
             </TextBox>
           </TextContainer>
         </Section>
