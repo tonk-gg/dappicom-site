@@ -207,8 +207,8 @@ function App() {
           <ImageContainer $background={"DAPPICOM"} style={{
             paddingTop: '10vh',
           }}>
-              <LazyLoadImage float={true} pad initialSrc="images/1_DappicomBox_illo.gif" srcList={["images/HD/1_DappicomBox_illo.gif"]}/>
-              <LazyLoadImage float={true} pad initialSrc="images/1_DappicomBox_anim.gif" srcList={["images/HD/1_DappicomBox_anim.gif"]}/>
+              <LazyLoadImage float={true} pad initialSrc="images/SMOL/1_DappicomBox_illo.gif" srcList={["images/HD/1_DappicomBox_illo.gif"]}/>
+              <LazyLoadImage float={true} pad initialSrc="images/preload/1_DappicomBox-1.png" srcList={["images/HD/1_DappicomBox_anim.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"DAPPICOM"}>
             <TextBox>
@@ -220,8 +220,8 @@ function App() {
         </Section>
       <Section>
           <ImageContainer $background={"PLAY"}>
-              <LazyLoadImage initialSrc="images/2_PlayNESROMS_illo.gif" srcList={["images/HD/2_PlayNESROMS_illo.gif"]}/>
-              <LazyLoadImage initialSrc="images/2_PlayNESROMS_anim.gif" srcList={["images/HD/2_PlayNESROMS_anim.gif"]}/>
+              <LazyLoadImage initialSrc="images/preload/2_PlayNESROMS-1.png" srcList={["images/HD/2_PlayNESROMS_illo.gif"]}/>
+              <LazyLoadImage initialSrc="images/SMOL/2_PlayNESROMS_anim.gif" srcList={["images/HD/2_PlayNESROMS_anim.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"PLAY"}>
             <TextBox>
@@ -233,7 +233,7 @@ function App() {
       </Section>
       <Section>
           <ImageContainer $background={"PROVE"}>
-              <LazyLoadImage initialSrc="images/3_ProveGameplay_illo.gif" srcList={["images/HD/3_ProveGameplay_illo.gif"]}/>
+              <LazyLoadImage initialSrc="images/preload/3_ProveGameplay-1.png" srcList={["images/HD/3_ProveGameplay_illo.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"PROVE"}>
             <TextBox>
@@ -247,8 +247,8 @@ function App() {
         </Section>
         <Section>
           <ImageContainer $background={"PERSIST"}>
-              <LazyLoadImage initialSrc="images/4_PersistStateOnchain_illo.gif" srcList={["images/HD/4_PersistStateOnchain_illo.gif"]}/>
-              <LazyLoadImage initialSrc="images/4_PersistStateOnchain_anim.gif" srcList={["images/HD/4_PersistStateOnchain_anim.gif"]}/>
+              <LazyLoadImage initialSrc="images/preload/4_PersistStateOnchain-1.png" srcList={["images/HD/4_PersistStateOnchain_illo.gif"]}/>
+              <LazyLoadImage initialSrc="images/SMOL/4_PersistStateOnchain_anim.gif" srcList={["images/HD/4_PersistStateOnchain_anim.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"PERSIST"}>
             <TextBox>
