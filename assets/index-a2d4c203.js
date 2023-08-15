@@ -210,7 +210,7 @@ Error generating stack: `+l.message+`
 `,cv=X.img`
     width: 100%;
     height: 100%;
-`,fv=()=>_.jsx(av,{children:_.jsx(cv,{src:"/images/github-corner.svg"})}),dv=X.div`
+`,fv=()=>_.jsx(av,{children:_.jsx(cv,{src:"images/github-corner.svg"})}),dv=X.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
