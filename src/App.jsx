@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import styled from 'styled-components'
 
 import LazyLoadImage from './components/LazyLoadImage';
@@ -196,9 +197,18 @@ const SeriousText = styled.p`
   font-family: 'Inter';
 `
 
-
 function App() {
-  return (
+  const [ preloaded, setPreload ] = useState(false);
+  useEffect(() => {
+    ["images/preload/1_DappicomBox-1.png"].forEach(imageSrc => {
+      const img = new Image();
+      img.src = imageSrc;
+      img.onload = () => {
+        setPreload(true);
+      }
+    })
+  }, []);
+  return preloaded ? (
     <>
     <Container>
       <BrilliantGithubCorner />
@@ -207,7 +217,7 @@ function App() {
           <ImageContainer $background={"DAPPICOM"} style={{
             paddingTop: '10vh',
           }}>
-              <LazyLoadImage float={true} pad initialSrc="images/SMOL/1_DappicomBox_illo.gif" srcList={["images/HD/1_DappicomBox_illo.gif"]}/>
+              <LazyLoadImage float={true} pad initialSrc="" srcList={["images/HD/1_DappicomBox_illo.gif"]}/>
               <LazyLoadImage float={true} pad initialSrc="images/preload/1_DappicomBox-1.png" srcList={["images/HD/1_DappicomBox_anim.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"DAPPICOM"}>
@@ -247,8 +257,8 @@ function App() {
         </Section>
         <Section>
           <ImageContainer $background={"PERSIST"}>
+              <LazyLoadImage initialSrc="" srcList={["images/HD/4_PersistStateOnchain_anim.gif"]}/>
               <LazyLoadImage initialSrc="images/preload/4_PersistStateOnchain-1.png" srcList={["images/HD/4_PersistStateOnchain_illo.gif"]}/>
-              <LazyLoadImage initialSrc="images/SMOL/4_PersistStateOnchain_anim.gif" srcList={["images/HD/4_PersistStateOnchain_anim.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"PERSIST"}>
             <TextBox>
@@ -281,7 +291,7 @@ function App() {
       </ScrollContainer>
     </Container>
     </>
-  )
+  ) : false
 }
 
 export default App
