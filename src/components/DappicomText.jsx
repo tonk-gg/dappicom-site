@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-import { MOBILE_WIDTH_SIZE, LAPTOP_SCREEN_HEIGHT, TALL_THIN_SIZE, ULTRA_SLIM, RAZOR_THIN, } from '../constants'
+import { MOBILE_WIDTH_SIZE, LAPTOP_SCREEN_HEIGHT, TALL_THIN_SIZE, ULTRA_SLIM } from '../constants'
 
 
 const Container = styled.div`
@@ -28,7 +28,7 @@ const Container = styled.div`
 const DappicomTextTop = styled.p`
     position: absolute;
     top: 0;
-    font-family: Alro;
+    font-family: "Alro";
     left: 0;
     margin: 0;
     font-size: 300px; 
@@ -50,7 +50,7 @@ const DappicomTextTop = styled.p`
 `
 const DappicomTextBottom = styled.p`
     position: absolute;
-    font-family: Alro;
+    font-family: "Alro";
     top: 15px;
     left: 15px;
     color: rgb(139 143,191);

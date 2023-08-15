@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle `
         font-family: 'Alro';
         font-weight: normal;
         font-style: normal;
-        src: url('/fonts/alro/alro-alro-regular-400.otf') format('opentype');
+        src: url('/fonts/alro/alro-alro-regular-400.ttf') format('truetype');
     }
     
     @font-face {

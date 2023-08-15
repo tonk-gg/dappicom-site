@@ -1,10 +1,11 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 import LazyLoadImage from './components/LazyLoadImage';
 import TextBox from './components/TextBox';
 import DappicomText from './components/DappicomText';
 
-import { MOBILE_WIDTH_SIZE, TALL_THIN_SIZE, LAPTOP_SCREEN_HEIGHT, ULTRA_SLIM, RAZOR_THIN } from './constants'
+import { MOBILE_WIDTH_SIZE, TALL_THIN_SIZE, LAPTOP_SCREEN_HEIGHT, ULTRA_SLIM } from './constants'
+import BrilliantGithubCorner from './components/BrilliantGithubCorner';
 
 
 const Container = styled.div`
@@ -22,6 +23,7 @@ const ScrollContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   overflow-y: scroll;
+  overflow-x: hidden;
   width: 100%;
 `
 
@@ -174,6 +176,10 @@ const ReadLink = styled.a`
     margin-top: 0;
   }
 
+  &:hover {
+    color: #FEB9D8;
+  }
+
 `
 
 const BigOlSpacer = styled.div`
@@ -186,7 +192,7 @@ const SeriousText = styled.p`
   position: absolute;
   bottom: 0;
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Inter';
 `
 
@@ -195,19 +201,20 @@ function App() {
   return (
     <>
     <Container>
+      <BrilliantGithubCorner />
       <ScrollContainer>
         <Section>
           <ImageContainer $background={"DAPPICOM"} style={{
             paddingTop: '10vh',
           }}>
-              <LazyLoadImage float={true} initialSrc="/images/1_DappicomBox_illo.gif" srcList={["/images/HD/1_DappicomBox_illo.gif"]}/>
-              <LazyLoadImage float={true} initialSrc="/images/1_DappicomBox_anim.gif" srcList={["/images/HD/1_DappicomBox_anim.gif"]}/>
+              <LazyLoadImage float={true} pad initialSrc="/images/1_DappicomBox_illo.gif" srcList={["/images/HD/1_DappicomBox_illo.gif"]}/>
+              <LazyLoadImage float={true} pad initialSrc="/images/1_DappicomBox_anim.gif" srcList={["/images/HD/1_DappicomBox_anim.gif"]}/>
           </ImageContainer>
           <TextContainer $background={"DAPPICOM"}>
             <TextBox>
-            Dappicom is a new open-source project brought to you by TONK and friends. 
+              DAPPICOM IS A NEW OPEN-SOURCE PROJECT BROUGHT TO YOU BY <a href={"https://tonk.gg"} target={"_blank"}>TONK</a> AND FRIENDS. 
             <br/><br/> 
-            Here's how it works.
+            HERE'S HOW IT WORKS.
             </TextBox>
           </TextContainer>
         </Section>
@@ -232,7 +239,7 @@ what’s new? as you play, bits of the nes machine state are streamed to a serve
             <TextBox>
             the server works for you day and night in a land far far away. 
             <br/><br/>
-It takes the bits of machine state and uses the noir language to convert play into mathematical proofs.
+It takes the bits of machine state and uses the <a href={"https://noir-lang.org/"} target={"_blank"}>noir language</a> to convert play into mathematical proofs.
             <br/><br/>
 you can’t argue with maths.
             </TextBox>
@@ -266,9 +273,9 @@ you get rewards, badges, or new levels, when the proofs of your achievement are 
             </ReadLink>
             <BigOlSpacer />
             <SeriousText>
-            Illustrations and Animations by Hi-Bred. This project is funded by an Aztec ecosystem grant.
+            Illustrations and Animations by <a href={"https://hi-bred.net/"} target={"_blank"}>Hi-Bred</a>. This project is funded by an <a src={"https://aztec.network/index.html"} target={"_blank"}>Aztec</a> ecosystem grant.
             <br/>
-            Copyright @ 2023 Aperture Labs. All Rights Reserved.
+            Copyright @ 2023 Tonk Labs. All Rights Reserved.
             </SeriousText>
           </FinalLanding>
         </Section>

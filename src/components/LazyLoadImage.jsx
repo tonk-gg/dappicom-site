@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components'
 
-import { MOBILE_WIDTH_SIZE, TALL_THIN_SIZE } from '../constants';
+import { TALL_THIN_SIZE } from '../constants';
 
 const float = keyframes`
   0% {
@@ -23,10 +23,8 @@ const LLImage = styled.img`
   height: auto;
   padding: 0;
   @media (max-width: ${TALL_THIN_SIZE}) {
+    top: ${({$pad}) => $pad ? `10vh` : 0};
     padding-top: 10vh;
-  }
-  @media (max-width: ${MOBILE_WIDTH_SIZE}) {
-    padding-top: 20vh;
   }
 `
 
@@ -75,9 +73,9 @@ const LazyLoadImage = (props) => {
     const RenderComponent = props.float ? FloatingImage : LLImage;
 
     if (!imagesPreloaded) {
-        return <RenderComponent src={props.initialSrc} />
+        return <RenderComponent src={props.initialSrc} $pad={props.pad} />
     } else {
-        return <RenderComponent src={props.srcList[0]} />
+        return <RenderComponent src={props.srcList[0]} $pad={props.pad}/>
     }
 }
 
