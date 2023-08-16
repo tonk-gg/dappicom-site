@@ -13,6 +13,7 @@ const MetaBox = styled.div`
     padding: 0 5vw;
     @media (max-width: ${TALL_THIN_SIZE}) {
         padding: 0;
+        margin-top: 20vh;
         width: calc(100vw - 20px);
         left: -20px;
     }

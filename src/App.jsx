@@ -60,7 +60,7 @@ const TextContainer = styled.div`
   overflow: visible;
 
   @media (max-width: ${TALL_THIN_SIZE}) {
-    padding: 20vh 0 200px 0;
+    padding: 0 0 100px 0;
   }
 `
 
