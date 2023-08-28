@@ -70,7 +70,7 @@ const TextContainerBox = styled.div`
     text-shadow: 2px 2px 0px #000;
     font-family: 'Rubik Mono One', Verdana;
     font-weight: 800;
-    font-size: 62px;
+    font-size: 48px;
     @media (max-width: ${TALL_THIN_SIZE}) {
         font-size: 36px;
     }

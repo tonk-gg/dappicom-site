@@ -235,7 +235,7 @@ function App() {
           </ImageContainer>
           <TextContainer $background={"PLAY"}>
             <TextBox>
-              RETRO GAMES SHOULD FEEL LIKE OLD TIMES. DAPPICOM LET'S YOU PLAY YOUR GAMES AND ENJOY!
+              RETRO GAMES SHOULD FEEL LIKE OLD TIMES. DAPPICOM LETS YOU PLAY YOUR GAMES AND ENJOY!
             <br/><br/>
             WHAT'S NEW? AS YOU PLAY, BITS OF THE NES MACHINE STATE ARE STREAMED TO A SERVER.
             </TextBox>
@@ -264,7 +264,9 @@ function App() {
             <TextBox>
               THOSE PROOFS ARE SENT TO A BLOCKCHAIN AND VERIFIED BY NOIR'S GENERATED SMART CONTRACT CODE.
             <br/><br/>
-            YOU GET REWARDS, BADGES OR NEW LEVELS WHEN THE PROOFS OF YOUR ACHIEVEMENT ARE CHECKED.
+            PROVEN GAMEPLAY COULD BE YOUR PATH TO REWARDS, BADGES OR NEW LEVELS.
+            <br/><br/>
+            WITH EXTRA-SPICY HIDDEN INFORMATION: PROVE THAT YOU BEAT THE MARIO SPEEDRUN WORLD RECORD WITHOUT SHOWING PEOPLE HOW YOU DID IT!
             </TextBox>
           </TextContainer>
         </Section>
