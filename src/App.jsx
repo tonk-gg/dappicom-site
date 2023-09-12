@@ -199,6 +199,7 @@ const SeriousText = styled.p`
 
 function App() {
   const [ preloaded, setPreload ] = useState(false);
+  const [ animationLoaded, setAnimationLoaded ] = useState(false);
   useEffect(() => {
     ["images/preload/1_DappicomBox-1.png"].forEach(imageSrc => {
       const img = new Image();
@@ -217,8 +218,8 @@ function App() {
           <ImageContainer $background={"DAPPICOM"} style={{
             paddingTop: '10vh',
           }}>
-              <LazyLoadImage float={true} pad initialSrc="" srcList={["images/HD/1_DappicomBox_illo.gif"]}/>
-              <LazyLoadImage float={true} pad initialSrc="images/preload/1_DappicomBox-1.png" srcList={["images/HD/1_DappicomBox_anim.gif"]}/>
+              <LazyLoadImage float={true} pad initialSrc="" srcList={["images/HD/1_DappicomBox_illo.gif"]} showPreloaded={animationLoaded} onPreloaded={() => setAnimationLoaded(true)}/>
+              <LazyLoadImage float={true} pad initialSrc="images/preload/1_DappicomBox-1.png" srcList={["images/HD/1_DappicomBox_anim.gif"]} showPreloaded={animationLoaded}/>
           </ImageContainer>
           <TextContainer $background={"DAPPICOM"}>
             <TextBox>

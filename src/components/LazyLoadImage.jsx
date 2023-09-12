@@ -67,15 +67,21 @@ function useImagePreloader(imageList) {
     return { imagesPreloaded }
 }
 
-const LazyLoadImage = (props) => {
-    const { imagesPreloaded } = useImagePreloader(props.srcList);
+const LazyLoadImage = ({ srcList, initialSrc, float, pad, onPreloaded, showPreloaded = true }) => {
+    const { imagesPreloaded } = useImagePreloader(srcList);
 
-    const RenderComponent = props.float ? FloatingImage : LLImage;
+    if (imagesPreloaded && !showPreloaded && !!onPreloaded) {
+      onPreloaded();
+    }
 
-    if (!imagesPreloaded) {
-        return <RenderComponent src={props.initialSrc} $pad={props.pad} />
+    const compoundCondition = imagesPreloaded && showPreloaded;
+
+    const RenderComponent = float ? FloatingImage : LLImage;
+
+    if (!compoundCondition) {
+        return <RenderComponent src={initialSrc} $pad={pad} />
     } else {
-        return <RenderComponent src={props.srcList[0]} $pad={props.pad}/>
+        return <RenderComponent src={srcList[0]} $pad={pad}/>
     }
 }
 
