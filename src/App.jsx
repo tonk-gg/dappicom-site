@@ -288,6 +288,8 @@ function App() {
             <SeriousText>
             Illustrations and Animations by <a href={"https://hi-bred.net/"} target={"_blank"}>Hi-Bred</a>. This project is funded by an <a src={"https://aztec.network/index.html"} target={"_blank"}>Aztec</a> ecosystem grant.
             <br/>
+            Much like <a href={"https://nesdev.org/"} target={"_blank"}>nesdev.org</a>, Dappicom is not affiliated with Nintendo and is not for profit.
+            <br/>
             Copyright @ 2023 Tonk Labs. All Rights Reserved.
             </SeriousText>
           </FinalLanding>
